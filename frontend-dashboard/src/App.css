@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); 
+@import 'react-date-range/dist/styles.css';
+@import 'react-date-range/dist/theme/default.css';
+html, body { 
+  margin: top 0;;
+  margin-right: 20px;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  height: 100%;
+}
+/* Theme Modes */
+.light-mode {
+  background: linear-gradient(135deg, #e0f7fa, #dff9fb);
+  color: #222;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+.calendar-popup {
+  margin-top: 1rem;
+  max-width: 320px;
+  background: var(--card-bg, #fff);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.dark-mode {
+  background: linear-gradient(135deg, #1e1e2f, #252542);
+  color: #f5f5f5;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+
+.app-container {
+  min-height: 100vh;
+}
+
+.toggle-btn {
+ background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  padding: 10px 18px;
+  font-size: 15px;
+  border-radius: 8px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.toggle-btn:hover {
+  background: linear-gradient(135deg, #8a2be2, #1e90ff);
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.5);
+}
+
+/* Cards / Forms */
+.card {
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.15);
+  color: inherit;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  transition: all 0.4s ease;
+}
+
+.dark-mode .card {
+  background: rgba(149, 85, 185, 0.3);
+  color: #f5f5f5;
+}
+
+.form-container {
+  animation: fadeIn 0.7s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+  transform: scale(1.02);
+}
+
+input.form-control {
+  padding: 12px;
+  font-size: 17px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #222;
+}
+
+.dark-mode input.form-control {
+  background-color: #2f2f45;
+  color: #f5f5f5;
+  border: 1px solid #666;
+}
+
+input.form-control:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 0.2rem rgba(106, 17, 203, 0.25);
+}
+.activity-heading {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  -webkit-backdrop-filter: blur(10px);
+}
+.dark-mode .activity-heading{
+  color: #f5f5f5;
+  box-shadow: rgba(0, 0, 0, 0.06);
+}
+.btn-primary,
+.btn-success {
+  border: none;
+  padding: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+  color: black;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  opacity: 0.95;
+}
+
+.text-center {
+  font-size: 15px;
+  color: inherit;
+}
+
+a.text-decoration-none {
+  color: #6a11cb;
+  font-weight: 500;
+}
+
+a.text-decoration-none:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* === Dashboard Styling === */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+   transition: background-color 0.7s ease, color 0.7s ease, opacity 0.7s ease;
+  opacity: 1;
+}
+.dashboard-layout .fade-out {
+  opacity: 0.2;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 30px;
+  padding-left: 90px;
+  position:relative;
+  margin-top : 25px;
+}
+
+.summary-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 30px;
+}
+.main-dashboard-content {
+  flex: 1;
+  padding: 20px;
+  overflow-x: hidden;
+   position: relative;
+}
+.calendar-wrapper
+.card-box,
+.chart-card,
+.activity-box {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.card-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.card-box:hover {
+  transform: translateY(-4px);
+}
+
+.card-box .icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.card-box .value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card-box .label {
+  font-size: 15px;
+  color: #666;
+}
+
+/* Activity Feed */
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.activity-box {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #00ffff;
+  transition: transform 0.2s ease;
+}
+
+.activity-box:hover {
+  transform: translateY(-5px);
+}
+
+.activity-box p {
+  margin: 4px 0;
+  font-size: 15px;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Export Button */
+.export-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  padding: 10px 18px;
+  font-size: 15px;
+  border-radius: 8px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.export-btn:hover {
+  background: linear-gradient(135deg, #8a2be2, #1e90ff);
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.5);
+}
+/* Dark Mode Styles */
+.dark-mode .card-box,
+.dark-mode .chart-card,
+.dark-mode .activity-box {
+  background-color: #2b2b3d;
+  color: #fff;
+}
+
+.dark-mode .chart-card h5 {
+  color: #eee;
+}
+
+.dark-mode .export-btn {
+  background-color: #17a2b8;
+}
+
+.dark-mode .export-btn:hover {
+  background-color: #138496;
+}
+/* Neon background for dark mode */
+.dark-mode .main-dashboard-content .sidebar{
+  background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
+  animation: neonGlow 10s ease infinite alternate;
+  background-size: 200% 200%;
+  transition: background 0.8s ease-in-out;
+}
+
+/* Optional: Add glowing border to cards too */
+.dark-mode .card-box,
+.dark-mode .chart-card,
+.dark-mode .activity-box
+  {
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 8px #00ffff55, 0 0 20px #00ffff22;
+}
+
+/* Neon Glow Animation */
+@keyframes neonGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Modal Styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.activity-modal {
+  background-color: #fff;
+  color: #333;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease-out;
+  position: relative;
+}
+.dark-mode .activity-modal {
+  background-color: #2c2c3e;
+  color: #f1f1f1;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+}
+.close-btn:hover {
+  color: #ff4444;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.top-controls {
+  position: absolute;
+  top: 20px;
+  right: 100px; /* Adjust this to match the dark mode button's left offset */
+  display: flex;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Optional: To prevent overlap in small screens */
+@media (max-width: 768px) {
+  .button-top-right {
+    position: static;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+}
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.dark-toggle-btn {
+  background-color: #6f42c1;
+  color: white;
+}
+
+/* Hover styles */
+.action-btn:hover {
+  opacity: 0.9;
+}
+
+/* 🌙 Dark mode styles */
+body.dark-mode .top-controls .action-btn {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark-mode .calendar-btn,
+body.dark-mode .export-btn {
+  background-color: #444;
+}
+
+body.dark-mode .dark-toggle-btn {
+  background-color: #8a2be2;
+}
+
+.charts-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chart-card {
+  flex: 1 1 32%;
+  max-width: 32%;
+  height: 360px; /* fixed height */
+   background: transparent !important;
+  border-radius: 12px;
+  padding: 15px;
+  color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #00ffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.chart-card h5 {
+  color: #00ffff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Plotly full size inside card */
+.chart-card .js-plotly-plot {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+/* Calendar styled to fit same layout */
+/* ✅ Make calendar scroll inside box if too tall */
+.calendar-card .rdrCalendarWrapper {
+  height: 300px; /* fits nicely inside card */
+  overflow: hidden; /* removes scrollbars */
+  scale: 0.95; /* slightly shrink the calendar */
+  transform-origin: top left;
+   background: transparent !important;
+}
+
+.calendar-card .rdrDateDisplayWrapper {
+  height: 40px; /* adjust height to fit */
+  margin-bottom: 0.10px;
+  margin-top: 0;
+   background: transparent !important;
+  
+}
+
+.calendar-card .rdrCalendarWrapper .rdrMonth {
+  padding: 0 10px;
+}
+
+.charts-wrapper > .chart-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60%;
+}
+.chart-card .plotly-graph-div {
+  flex-grow: 1;
+  width: 100%;
+}
+.chart-card .plotly-graph-div canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 300px !important;
+}
+/*date dark background*/
+/* Main calendar container */
+.dark-mode .calendar-card .rdrCalendarWrapper {
+  background: rgba(255, 255, 255, 0.05); /* semi-transparent for glass effect */
+  color: white !important;
+}
+
+/* Date display inputs (top input fields) */
+.dark-mode .calendar-card .rdrDateDisplayWrapper {
+  background: transparent !important;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: white !important;
+}
+
+/* Day cells (dates) */
+.dark-mode .calendar-card .rdrDayNumber span {
+  color: white !important;
+}
+.dark-mode .calendar-card .rdrDateDisplayItem input {
+  background: transparent !important;
+  
+}
+
+
+/* Active/selected range */
+.dark-mode .calendar-card .rdrDayHovered,
+.dark-mode .calendar-card .rdrDayStartPreview,
+.dark-mode .calendar-card .rdrDayEndPreview,
+.dark-mode .calendar-card .rdrInRange,
+.dark-mode .calendar-card .rdrStartEdge,
+.dark-mode .calendar-card .rdrEndEdge {
+  background-color: rgba(0, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+/* Header and navigation */
+.dark-mode .calendar-card .rdrMonthAndYearPickers select,
+.dark-mode .calendar-card .rdrMonthAndYearWrapper {
+  background: transparent;
+  color: white !important;
+}
+
+.dark-mode .calendar-card .rdrWeekDay {
+  color: #ccc !important;
+}
+
+
+.chart-card h5 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  color: var(--text-color);
+}
+:root {
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --border-color: #dddddd;
+}
+
+.dark-mode {
+  --card-bg: #1f1f1f;
+  --text-color: #f0f0f0;
+  --border-color: #444444;
+}
+
+.light-mode {
+  --card-bg: #ffffff;
+  --text-color: #222222;
+  --border-color: #dddddd;
+}
+.chart-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: scale(1.01);
+}

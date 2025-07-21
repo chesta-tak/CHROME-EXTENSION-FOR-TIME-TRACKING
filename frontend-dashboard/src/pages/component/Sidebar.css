@@ -1,0 +1,76 @@
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.05); /* semi-transparent */
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* vertical center */
+  gap: 30px; /* space between icons */
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px); /* optional glass effect */
+  transition: background 0.3s, border 0.3s;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s;
+}
+
+.icon-btn:hover {
+  transform: scale(1.2);
+  color: #6a11cb;
+}
+.icon-btn.active {
+  color: #6a11cb;
+}
+
+/* Dark Mode */
+.dark-mode .sidebar {
+  background: rgba(31, 31, 47, 0.4);
+  border-color: #444;
+}
+
+.dark-mode .icon-btn {
+  background-color: linear-gradient(135deg, #8a2be2, #1e90ff);
+  backdrop-filter: 0 0 12px rgba(138, 43, 226, 0.5);
+}
+
+.dark-mode .icon-btn.active {
+  color: #6a11cb;
+}
+.logout-btn {
+  position: absolute;
+  bottom: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--logout-color);
+}
+.logout-btn:hover {
+  transform: scale(1.2);
+  color: #6a11cb;
+}
+.logout-btn.active {
+  color: #6a11cb;
+}
+/* Light mode */
+body.light-mode {
+  --sidebar-bg: #f4f4f4;
+  --icon-color: #333;
+  --logout-color: #e74c3c;
+}
+
+/* Dark mode */
+body.dark-mode {
+  --sidebar-bg: #1e1e1e;
+  --icon-color: #ddd;
+  --logout-color: #ff4d4d;
+}

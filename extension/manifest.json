@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Productivity Time Tracker",
+  "version": "1.0",
+  "description": "Automatically tracks time spent on websites.",
+  "permissions": ["tabs", "storage", "scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Productivity Time Tracker"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+  ,
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:3000/*"], 
+      "js": ["contentScript.js"]
+    }
+  ]
+}
+
