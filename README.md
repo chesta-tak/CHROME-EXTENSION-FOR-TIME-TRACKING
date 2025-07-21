@@ -29,6 +29,9 @@ A smart Chrome Extension that tracks your browsing activity and helps you unders
 - 🛠️ Backend APIs to store & fetch activity logs
 
 # 📸 Preview
+![login](https://github.com/user-attachments/assets/551740fd-fd1f-44b9-a6e4-06426f1fd6e0)
+![dashboard](https://github.com/user-attachments/assets/25e3053b-d45e-4c72-bd91-847d4c9b945b)
+![dashboard2](https://github.com/user-attachments/assets/665bb8da-d9bd-40aa-9123-d0cedc48bee9)
 
 
 # Getting Started with Create React App
