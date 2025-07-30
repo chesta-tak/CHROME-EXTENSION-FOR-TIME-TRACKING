@@ -1,17 +1,5 @@
 ## CHROME-EXTENSION FOR TIME TRACKING
 
-"COMPANY":CODETECH IT SOLUTION
-
-"NAME":CHESTA
-
-"INTERN ID":CT08DN805
-
-"DOMAIN":FULL STACK DEVELOPMENT
-
-"DURATION":8 WEEK
-
-"MENTOR": NEELA SANTOSH
-
 ## INTRODUCTION
 
 A smart Chrome Extension that tracks your browsing activity and helps you understand how you spend your time online. Built using **JavaScript**, **React**, **Node.js**, and **MongoDB**, this project includes a modern dashboard with charts and insights.
