@@ -16,6 +16,72 @@ A smart Chrome Extension that tracks your browsing activity and helps you unders
 - 🌗 Clean and modern UI with dark mode
 - 🛠️ Backend APIs to store & fetch activity logs
 
+## 🚀 Run the project locally (VS Code)
+
+This repository has three parts:
+
+1. `backend` (Node + Express API)
+2. `frontend-dashboard` (React app)
+3. `extension` (Chrome extension)
+
+### 1) Backend setup
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file inside `backend/` with at least:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=5000
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
+```
+
+Run backend:
+
+```bash
+npm start
+```
+
+Backend runs on `http://localhost:5000` (or your `PORT`).
+
+### 2) Frontend dashboard setup
+
+Open a new terminal:
+
+```bash
+cd frontend-dashboard
+npm install
+npm start
+```
+
+Frontend runs on `http://localhost:3000`.
+
+### 3) Load Chrome extension
+
+1. Open Chrome and go to `chrome://extensions/`
+2. Turn on **Developer mode**
+3. Click **Load unpacked**
+4. Select the `extension/` folder from this repo
+
+---
+
+### Quick start (after first install)
+
+When dependencies are already installed, just run:
+
+```bash
+# terminal 1
+cd backend && npm start
+
+# terminal 2
+cd frontend-dashboard && npm start
+```
+
 # 📸 Preview
 ![login](https://github.com/user-attachments/assets/551740fd-fd1f-44b9-a6e4-06426f1fd6e0)
 ![dashboard](https://github.com/user-attachments/assets/25e3053b-d45e-4c72-bd91-847d4c9b945b)
